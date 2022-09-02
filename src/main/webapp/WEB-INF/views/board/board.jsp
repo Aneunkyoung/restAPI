@@ -17,7 +17,7 @@
     </head>
     <body>
         <div class="content" style="margin: 100px 250px 250px 265px;">
-            <h2 style="margin-bottom:50px">Blog(${commentCount})</h2>
+            <h2 style="margin-bottom:50px"><input id="boardCount" class="uk-input uk-form-width-medium" type="label" style="padding:0; color:#333333;border:none"></h2>
             <div id="boardList"></div>
             <script id="template" type="text/x-handlebars-template">
                 {{#each .}}
@@ -100,6 +100,7 @@
                     var source = $("#template").html();
                     var template = Handlebars.compile(source);
                     $("#boardList").html(template(json.boardList));
+                    $("#boardCount").val("Blog("+json.commentCount+")");
                     pageDisplay(json.pager);
                 },
                 error: function (xhr) {
