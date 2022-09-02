@@ -36,6 +36,7 @@ public class RestApiController {
 		
 		Map<String, Object> returnMap=new HashMap<String, Object>();
 		returnMap.put("boardList", boardService.getBoardList(pagerMap));
+		returnMap.put("commentCount", boardService.getBoardCount());
 		returnMap.put("pager", pager);
 		
 		return returnMap;
